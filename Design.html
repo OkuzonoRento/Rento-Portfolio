@@ -3,85 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Viewer</title>
 
-    <script
-    type="module"
-    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-    </script>
+    <!-- set css -->
+    <link rel="stylesheet" href="./Css/ResetStyle.css">
+    <link rel="stylesheet" href="./Css/Style.css">
 
-    <style>
-        body
-        {
-            margin: 0;
-            background: #E5E3DC;
-            font-family: "Poppins", sans-serif;
-        }
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-        h1
-        {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        model-viewer
-        {
-            width: 100%;
-            height: 80vh;
-        }
-
-        .back_button
-        {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-
-            padding: 10px 20px;
-
-            background: #171A20;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Design Viewr</title>
 </head>
+<body class="noto model_page">
+    <header>
+        <a href="./index.html" class="back_button">
+            ← Back
+        </a>
+        <h1 id="modelTitle"></h1>
+    </header>
+    
+    <div class="content">
 
-<body>
+        <model-viewer id="modelViewer" camera-controls shadow-intensity="1"></model-viewer>
+    
+        <div class="modelInfo">
+            <dl>
+                <dt>Software</dt>
+                <dd id="software"></dd>
+                <dt>Period</dt>
+                <dd id="period"></dd>
+                <dt>Polygon</dt>
+                <dd id="polygon"></dd>
+            </dl>
+        </div>
+    </div>
 
-    <a href="./index.html" class="back_button">
-        ← Back
-    </a>
-
-    <h1 id="modelTitle"></h1>
-
-    <model-viewer
-        id="modelViewer"
-        camera-controls
-        shadow-intensity="1"
-        exposure="1.2"
-        environment-image="neutral">
-    </model-viewer>
 
     <script>
         const models =
         {
             pochi:
             {
-                title: "Pochi",
-                src: "../Models/Pochi.glb"
+                _title: "Pochi",
+                _src: "./Models/Pochi.glb",
+                _software: "Blender",
+                _period: "1 Day",
+                _polygon: "15,000"
             },
 
-            sword:
-            {
-                title: "Sword",
-                src: "../Models/Sword.glb"
-            },
-
-            house:
-            {
-                title: "House",
-                src: "../Models/House.glb"
-            }
         };
 
         const params = new URLSearchParams(location.search);
@@ -91,8 +58,11 @@
 
         if(model)
         {
-            document.getElementById("modelTitle").textContent = model.title;
-            document.getElementById("modelViewer").src = model.src;
+            document.getElementById("modelTitle").textContent = model._title;
+            document.getElementById("modelViewer").src = model._src;
+            document.getElementById("software").textContent = model._software;
+            document.getElementById("period").textContent = model._period;
+            document.getElementById("polygon").textContent = model._polygon;
         }
         else
         {
@@ -100,5 +70,8 @@
         }
     </script>
 
+    <footer>
+
+    </footer>
 </body>
 </html>
