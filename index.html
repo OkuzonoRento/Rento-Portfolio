@@ -15,6 +15,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+JP:wght@100..900&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     </head>
 
     <body class="noto">
@@ -427,8 +429,21 @@
                 <div class="design_list">
                     <div class="item">
                         <a href="design.html?id=pochi">
-                            <div class="design1 image container"></div>
-                            <p>design1</p>
+                            <model-viewer class="index_modelviewer container" src="./Models/Pochi.glb" autoplay auto-rotate rotation-per-second="30deg" auto-rotate-delay="0" interaction-prompt="none" disable-zoom shadow-intensity="0"></model-viewer>
+                            <p>Pochi</p>
+                            <dl class="flex">
+                                <dt>開発エンジン</dt>
+                                <dd>：Blender</dd>
+                                <dt>制作期間</dt>
+                                <dd>：1Day</dd>
+                            </dl>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="design.html?id=">
+                            <model-viewer class="index_modelviewer container" src="./Models/" autoplay auto-rotate rotation-per-second="30deg" auto-rotate-delay="0" interaction-prompt="none" disable-zoom shadow-intensity="0"></model-viewer>
+                            <p>design2</p>
                             <dl class="flex">
                                 <dt>開発エンジン</dt>
                                 <dd>：</dd>
@@ -440,21 +455,8 @@
 
                     <div class="item">
                         <a href="design.html?id=">
-                            <div class="design1 image container"></div>
-                            <p>design1</p>
-                            <dl class="flex">
-                                <dt>開発エンジン</dt>
-                                <dd>：</dd>
-                                <dt>制作期間</dt>
-                                <dd>：</dd>
-                            </dl>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="design.html?id=">
-                            <div class="design1 image container"></div>
-                            <p>design1</p>
+                            <model-viewer class="index_modelviewer container" src="./Models/" autoplay auto-rotate rotation-per-second="30deg" auto-rotate-delay="0" interaction-prompt="none" disable-zoom shadow-intensity="0"></model-viewer>
+                            <p>design3</p>
                             <dl class="flex">
                                 <dt>開発エンジン</dt>
                                 <dd>：</dd>

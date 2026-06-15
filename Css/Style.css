@@ -17,6 +17,7 @@
   --item-button-color: #171A20;
   --item-button-font-color: #F7F7F4;
   --border-color: #C9C6BC;
+  --modelviewer-color: #dadada;
 }
 
 /* skill 熟練度 */
@@ -391,15 +392,15 @@ body:not(.model_page) header
 #games dl,
 #design dl
 {
-  max-width: 200px;
-  margin-right: auto;
-  margin-top: 25px;
+  max-width: none;
+  width: 90%;
+  margin: 25px auto 0 auto;
 }
 
 #games dt,
 #design dt
 {
-  width: 60%;
+  width: 45%;
   font-weight: 400;
   padding: 5px;
 }
@@ -407,7 +408,7 @@ body:not(.model_page) header
 #games dd,
 #design dd
 {
-  width: 38%;
+  width: 55%;
   padding: 5px;
 }
 
@@ -428,6 +429,18 @@ body:not(.model_page) header
   background-size: cover;
   height: 200px;
   border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.index_modelviewer
+{
+  background-color: var(--modelviewer-color);
+  display: block;
+  width: 90%;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  pointer-events: none;
   margin-bottom: 10px;
 }
 
@@ -515,7 +528,7 @@ body:not(.model_page) header
   gap: 40px;
 }
 
-model-viewer
+.model_page model-viewer
 {
   display: block;
   width: 50%;
@@ -703,13 +716,13 @@ footer
     flex-direction: column;
   }
 
-  model-viewer,
+  .model_page model-viewer,
   .modelInfo
   {
     width: 100%;
   }
 
-  model-viewer
+  .model_page model-viewer
   {
     height: 60vh;
   }
