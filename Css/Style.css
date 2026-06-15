@@ -437,7 +437,7 @@ body:not(.model_page) header
   background-color: var(--modelviewer-color);
   display: block;
   width: 90%;
-  height: 50px;
+  height: 200px;
   border-radius: 10px;
   overflow: hidden;
   pointer-events: none;
